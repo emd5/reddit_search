@@ -11,15 +11,15 @@ class SearchForm extends React.Component{
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleRedditSearchChange = this.handleRedditSearchChange.bind(this);
+        this.handleSearchFormChange = this.handleSearchFormChange.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.redditSelect(this.state.redditSearch);
+        this.props.redditSelect(this.state.redditName);
     }
 
-    handleRedditSearchChange(e){
+    handleSearchFormChange(e){
         this.setState({redditName: e.target.value})
     }
 
@@ -30,7 +30,7 @@ class SearchForm extends React.Component{
                        name='redditName'
                        placeholder='Seach for something in reddit'
                        value={this.state.redditName}
-                       onChange={this.handleRedditSearchChange}/>
+                       onChange={this.handleSearchFormChange}/>
             </form>
         )
     }
